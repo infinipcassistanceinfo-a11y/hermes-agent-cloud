@@ -64,13 +64,18 @@ def supabase_request(method, endpoint, data=None):
             response = requests.get(url, headers=headers)
         elif method == "POST":
             response = requests.post(url, headers=headers, json=data)
+        elif method == "PUT":
+            response = requests.put(url, headers=headers, json=data)
         elif method == "PATCH":
             response = requests.patch(url, headers=headers, json=data)
         elif method == "DELETE":
             response = requests.delete(url, headers=headers)
         
-        if response.status_code in [200, 201]:
-            return response.json()
+        print(f"Supabase {method} {endpoint}: {response.status_code}")
+        if response.status_code in [200, 201, 204]:
+            if response.text:
+                return response.json()
+            return {}
     except Exception as e:
         print(f"Supabase error: {e}")
     
