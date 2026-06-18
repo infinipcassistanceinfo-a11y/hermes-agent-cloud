@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: hermes-agent-cloud
+    runtime: docker
+    plan: free
+    disk:
+      name: hermes-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: HERMES_PASSWORD
+        sync: false
+        description: Password to access the web interface
+      - key: OPENAI_API_KEY
+        sync: false
+        description: API key for OpenAI, OpenRouter, or Ollama Cloud
+      - key: OPENAI_BASE_URL
+        sync: false
+        description: Base URL for API (https://api.openai.com/v1 for OpenAI, https://openrouter.ai/api/v1 for OpenRouter, https://ollama.com/v1 for Ollama Cloud)
+      - key: HERMES_MODEL
+        sync: false
+        description: Model name (gpt-4o-mini, glm-5.1, openrouter/quen-2.5-72b, etc.)
+      - key: PORT
+        value: 10000
+      - key: SECRET_KEY
+        generateValue: true
