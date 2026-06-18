@@ -35,6 +35,8 @@ HERMES_MODEL = os.getenv("HERMES_MODEL", "gpt-4o-mini")
 # Try to import OpenAI
 HERMES_AVAILABLE = False
 client = None
+print(f"Supabase URL: {SUPABASE_URL}")
+print(f"Supabase Key: {SUPABASE_KEY[:20] if SUPABASE_KEY else 'None'}...")
 try:
     from openai import OpenAI
     if OPENAI_API_KEY:
