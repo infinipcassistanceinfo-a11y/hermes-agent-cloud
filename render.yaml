@@ -4,22 +4,19 @@ services:
     runtime: docker
     plan: free
     envVars:
-      - key: HERMES_PASSWORD
-        description: Password to access the web interface
-      - key: OPENAI_API_KEY
-        description: API key for OpenAI, OpenRouter, or Ollama Cloud
-      - key: OPENAI_BASE_URL
-        description: Base URL for API (https://api.openai.com/v1 for OpenAI, https://openrouter.ai/api/v1 for OpenRouter, https://ollama.com/v1 for Ollama Cloud)
-      - key: HERMES_MODEL
-        description: Model name (gpt-4o-mini, glm-5.1, openrouter/quen-2.5-72b, etc.)
       - key: SUPABASE_URL
-        description: Supabase project URL (https://xxx.supabase.co)
+        value: https://mhigylgjjcyhesssdfom.supabase.co
       - key: SUPABASE_KEY
-        description: Supabase anon/public key
-      - key: GITHUB_TOKEN
-        description: GitHub personal access token for skills sync
+        value: sb_publishable_66VFFFOGwSIpj6cm88tlVw_q7tq0TWQ
+      - key: OPENAI_API_KEY
+        value: aac7d95263284bf3804000f3fb5b58ca.hOLRiwUuLkcDN_tKGzlzuyIc
+      - key: OPENAI_BASE_URL
+        value: https://ollama.com/v1
+      - key: HERMES_MODEL
+        value: glm-5.1
+      - key: HERMES_PASSWORD
+        value: Hermes2026
       - key: GITHUB_REPO
-        description: GitHub repo for skills (username/repo)
         value: infinipcassistanceinfo-a11y/hermes-skills
       - key: PORT
         value: "10000"
