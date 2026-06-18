@@ -26,7 +26,6 @@ services:
         sync: false
         description: GitHub personal access token for skills sync
       - key: GITHUB_REPO
-        sync: false
         description: GitHub repo for skills (username/repo)
         value: infinipcassistanceinfo-a11y/hermes-skills
       - key: PORT
