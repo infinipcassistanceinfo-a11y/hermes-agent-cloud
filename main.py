@@ -10,7 +10,7 @@ import uuid
 import asyncio
 from pathlib import Path
 from datetime import datetime
-from flask import Flask, render_template_string, request, jsonify, session, redirect, url_from
+from flask import Flask, render_template_string, request, jsonify, session
 
 # Configuration
 app = Flask(__name__)
