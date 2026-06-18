@@ -121,14 +121,20 @@ def init_supabase_tables():
     return True
 
 def save_memory(key, value):
-    """Save memory to Supabase"""
+    """Save memory to Supabase with upsert"""
     if not SUPABASE_URL:
         return False
     
+    # Use upsert with merge on conflict
     data = {"key": key, "value": json.dumps(value)}
     
-    # Try to insert, if exists update
-    result = supabase_request("POST", f"memory?on_conflict=key", data)
+    # First try to insert, if conflict, update
+    result = supabase_request("POST", "memory", data)
+    if result is not None:
+        return True
+    
+    # If insert failed (conflict), try update
+    result = supabase_request("PATCH", f"memory?key=eq.{key}", {"value": json.dumps(value)})
     return result is not None
 
 def load_memory(key):
