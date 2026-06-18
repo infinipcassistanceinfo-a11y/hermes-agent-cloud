@@ -5,6 +5,13 @@ echo "========================================"
 echo "Starting Hermes Agent Cloud..."
 echo "========================================"
 
+# Debug: Print environment variables
+echo "Environment variables:"
+echo "  SUPABASE_URL: ${SUPABASE_URL:-NOT_SET}"
+echo "  SUPABASE_KEY: ${SUPABASE_KEY:-NOT_SET}"
+echo "  OPENAI_API_KEY: ${OPENAI_API_KEY:-NOT_SET}"
+echo "  HERMES_MODEL: ${HERMES_MODEL:-NOT_SET}"
+
 # Create Hermes home directory
 mkdir -p ~/.hermes/skills ~/.hermes/plugins ~/.hermes/cron ~/.hermes/sessions
 
