@@ -347,7 +347,11 @@ def health():
         "hermes_available": HERMES_AVAILABLE,
         "supabase_configured": bool(SUPABASE_URL),
         "github_configured": bool(GITHUB_TOKEN),
-        "model": HERMES_MODEL
+        "model": HERMES_MODEL,
+        "debug": {
+            "SUPABASE_URL": os.getenv("SUPABASE_URL", "NOT_SET"),
+            "SUPABASE_KEY": os.getenv("SUPABASE_KEY", "NOT_SET")[:20] if os.getenv("SUPABASE_KEY") else "NOT_SET"
+        }
     })
 
 # ============== HTML TEMPLATE ==============
