@@ -16,6 +16,19 @@ services:
       - key: HERMES_MODEL
         sync: false
         description: Model name (gpt-4o-mini, glm-5.1, openrouter/quen-2.5-72b, etc.)
+      - key: SUPABASE_URL
+        sync: false
+        description: Supabase project URL (https://xxx.supabase.co)
+      - key: SUPABASE_KEY
+        sync: false
+        description: Supabase anon/public key
+      - key: GITHUB_TOKEN
+        sync: false
+        description: GitHub personal access token for skills sync
+      - key: GITHUB_REPO
+        sync: false
+        description: GitHub repo for skills (username/repo)
+        value: infinipcassistanceinfo-a11y/hermes-skills
       - key: PORT
         value: 10000
       - key: SECRET_KEY
